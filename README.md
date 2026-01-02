@@ -1,5 +1,5 @@
 # Spring Boot 3 Essential Training
-This is the repository for the LinkedIn Learning course `Spring Boot 3 Essential Training`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course `Spring Boot 3 Essential Training`. The full course is available from LinkedIn Learning
 
 ## Content of repository 
 
