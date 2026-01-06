@@ -1,11 +1,5 @@
 package com.frankmoley.lil.roomwebapp.web.model;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
-
+import lombok.*;
 import java.util.UUID;
 
 @Getter
