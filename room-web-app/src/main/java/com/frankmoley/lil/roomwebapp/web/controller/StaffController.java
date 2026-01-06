@@ -5,6 +5,7 @@ import com.frankmoley.lil.roomwebapp.data.repository.EmployeesRepository;
 import com.frankmoley.lil.roomwebapp.web.model.Staff;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +22,7 @@ public class StaffController {
         this.employeesRepository = employeesRepository;
     }
 
+    @GetMapping
     public String getStaffPage(Model model){
         List<EmployeesEntity> employeesEntityList = this.employeesRepository.findAll();
         List<Staff> staff = new ArrayList<>(employeesEntityList.size());
