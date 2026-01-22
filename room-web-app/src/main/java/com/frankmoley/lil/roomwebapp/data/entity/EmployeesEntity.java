@@ -2,7 +2,9 @@ package com.frankmoley.lil.roomwebapp.data.entity;
 
 import com.frankmoley.lil.roomwebapp.utils.Position;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
@@ -11,6 +13,8 @@ import java.util.UUID;
 @Table(name = "EMPLOYEES")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class EmployeesEntity {
 
     @Id
@@ -30,6 +34,7 @@ public class EmployeesEntity {
     @Column(name = "POSITION")
     @Enumerated(EnumType.STRING)
     private Position position;
+
 
     @Override
     public String toString() {

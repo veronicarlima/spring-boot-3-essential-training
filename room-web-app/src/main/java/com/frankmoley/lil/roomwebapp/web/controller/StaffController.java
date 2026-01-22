@@ -1,6 +1,7 @@
 package com.frankmoley.lil.roomwebapp.web.controller;
 import com.frankmoley.lil.roomwebapp.data.entity.EmployeesEntity;
 import com.frankmoley.lil.roomwebapp.data.repository.EmployeesRepository;
+import com.frankmoley.lil.roomwebapp.service.StaffService;
 import com.frankmoley.lil.roomwebapp.web.model.Staff;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,24 +15,16 @@ import java.util.List;
 @RequestMapping("/staffs")
 public class StaffController {
 
-    private final EmployeesRepository employeesRepository;
+    private final StaffService staffService;
 
-    public StaffController(EmployeesRepository employeesRepository) {
-        this.employeesRepository = employeesRepository;
+    public StaffController(EmployeesRepository employeesRepository, StaffService staffService) {
+        this.staffService = staffService;
     }
 
     @GetMapping
     public String getStaffPage(Model model){
-        List<EmployeesEntity> employeesEntityList = this.employeesRepository.findAll();
-        List<Staff> staffs = new ArrayList<>(employeesEntityList.size());
-        employeesEntityList.forEach(e->
-                staffs.add(
-                        new Staff(
-                                e.getEmployeeId(),
-                                e.getFirstName(),
-                                e.getLastName(),
-                                e.getPosition().toString())));
-        model.addAttribute("staffs", staffs);
+
+        model.addAttribute("staffs", this.staffService.getAllStaffs());
         return "staffs";
     }
 }

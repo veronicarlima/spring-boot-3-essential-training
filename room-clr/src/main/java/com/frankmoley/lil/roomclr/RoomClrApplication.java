@@ -12,6 +12,10 @@ public class RoomClrApplication {
     SpringApplication.run(RoomClrApplication.class, args);
   }
 
+
+  //criar outro bean para poder chamar o resttemplate do outro modulo para funcionar API via chamada
+
+
   @Bean
   public CommandLineRunner run() {
     return args -> {
